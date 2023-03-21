@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SinglyLinkedList<T>: LinkedListProtocol {
+struct SinglyLinkedList<T: Equatable>: LinkedListProtocol {
     private var head: Node<T>?
     
     var isEmpty: Bool {
@@ -76,19 +76,19 @@ struct SinglyLinkedList<T>: LinkedListProtocol {
     
     @discardableResult
     mutating func removeLast() -> T? {
-        var current = head
+        var node = head
         
         if head?.next == nil {
             head = nil
-            return current?.data
+            return node?.data
         }
         
-        while current?.next?.next != nil {
-            current = current?.next
+        while node?.next?.next != nil {
+            node = node?.next
         }
         
-        let result = current?.next?.data
-        current?.next = nil
+        let result = node?.next?.data
+        node?.next = nil
         
         return result
     }
@@ -113,11 +113,11 @@ struct SinglyLinkedList<T>: LinkedListProtocol {
     }
     
     func printList() {
-        var current = head
+        var node = head
         
-        while current != nil {
-            print(current?.data ?? "", terminator: "->")
-            current = current?.next
+        while node != nil {
+            print(node?.data ?? "", terminator: "->")
+            node = node?.next
         }
         print("nil")
     }

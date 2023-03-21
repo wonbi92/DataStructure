@@ -7,7 +7,8 @@
 
 import Foundation
 
-final class Node<T> {
+final class Node<T: Equatable>: Equatable {
+    private let id: UUID = UUID()
     var prev: Node?
     var data: T
     var next: Node?
@@ -16,5 +17,9 @@ final class Node<T> {
         self.prev = prev
         self.data = data
         self.next = next
+    }
+    
+    static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
+        lhs.data == rhs.data && lhs.id == rhs.id
     }
 }
