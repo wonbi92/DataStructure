@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SinglyLinkedList<T> {
+struct SinglyLinkedList<T>: LinkedListProtocol {
     private var head: Node<T>?
     
     var isEmpty: Bool {
