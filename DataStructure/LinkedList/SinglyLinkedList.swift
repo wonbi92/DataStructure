@@ -14,10 +14,6 @@ struct SinglyLinkedList<T> {
         head == nil
     }
     
-    init(head: Node<T>? = nil) {
-        self.head = head
-    }
-    
     mutating func insert(_ data: T) {
         print("insert:", data)
         let newData = Node(data: data, next: head)
