@@ -42,7 +42,7 @@ struct DoublyLinkedList<T: Equatable>: LinkedListProtocol {
             tail = newNode
             return
         }
-    
+        
         tail?.next = newNode
         newNode.prev = tail
         tail = newNode
@@ -50,38 +50,31 @@ struct DoublyLinkedList<T: Equatable>: LinkedListProtocol {
     
     mutating func insert(_ data: T, at index: UInt) {
         print("insert at \(index):", data)
-        defer { count += 1 }
-        let newNode = Node(data: data)
-        var node: Node<T>?
-        
-        if isEmpty {
-            head = newNode
-            tail = newNode
+        guard let node = searchNode(index: index) else {
+            append(data)
             return
         }
         
-        node = searchNode(index: index)
+        let newNode = Node(data: data)
+        defer { count += 1 }
         
         newNode.next = node
-        newNode.prev = node?.prev
-        node?.prev?.next = newNode
-        node?.prev = newNode
+        newNode.prev = node.prev
+        node.prev?.next = newNode
+        node.prev = newNode
     }
     
     @discardableResult
     mutating func removeFirst() -> T? {
         print("removeFirst", terminator: ": ")
         if isEmpty { return nil }
-        defer { count -= 1 }
         
         if head == tail {
-            defer {
-                head = nil
-                tail = nil
-            }
+            defer { removeAll() }
             return head?.data
         }
         
+        defer { count -= 1 }
         let result = head?.data
         
         head = head?.next
@@ -94,16 +87,13 @@ struct DoublyLinkedList<T: Equatable>: LinkedListProtocol {
     mutating func removeLast() -> T? {
         print("removeLast", terminator: ": ")
         if isEmpty { return nil }
-        defer { count -= 1 }
-
+        
         if head == tail {
-            defer {
-                head = nil
-                tail = nil
-            }
+            defer { removeAll() }
             return head?.data
         }
         
+        defer { count -= 1 }
         let result = tail?.data
         
         tail = tail?.prev
@@ -115,20 +105,24 @@ struct DoublyLinkedList<T: Equatable>: LinkedListProtocol {
     @discardableResult
     mutating func remove(at index: UInt) -> T? {
         print("remove at \(index)", terminator: ": ")
-        defer { count -= 1 }
-        if isEmpty { return nil }
         if index == 0 { return removeFirst() }
+        guard let node = searchNode(index: index) else { return nil }
         
-        let node = searchNode(index: index)
+        defer { count -= 1 }
+        node.prev?.next = node.next
+        node.next?.prev = node.prev
         
-        node?.prev?.next = node?.next
-        node?.next?.prev = node?.prev
-        
-        return node?.data
+        return node.data
+    }
+    
+    mutating func removeAll() {
+        head = nil
+        tail = nil
+        count = 0
     }
     
     private func searchNode(index: UInt) -> Node<T>? {
-        if isEmpty, count > index { return nil }
+        if isEmpty || index >= count { return nil }
         
         var node = head
         

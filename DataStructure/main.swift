@@ -7,7 +7,7 @@
 
 import Foundation
 
-var linkedList = DoublyLinkedList<Int>()
+var linkedList = CircularLinkedList<Int>()
 
 linkedList.append(1)
 linkedList.printList()

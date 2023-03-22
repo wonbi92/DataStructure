@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E362A0F829CAB89000293B0C /* CircularLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362A0F729CAB89000293B0C /* CircularLinkedList.swift */; };
 		E3C0B16F29C99EFB00996E3C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0B16E29C99EFB00996E3C /* main.swift */; };
 		E3C0B17729C99F1C00996E3C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0B17629C99F1C00996E3C /* Node.swift */; };
 		E3C0B17929C99FC600996E3C /* SinglyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0B17829C99FC600996E3C /* SinglyLinkedList.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E362A0F729CAB89000293B0C /* CircularLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLinkedList.swift; sourceTree = "<group>"; };
 		E3C0B16B29C99EFB00996E3C /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C0B16E29C99EFB00996E3C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E3C0B17629C99F1C00996E3C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				E3C0B17C29C9F84A00996E3C /* LinkedListProtocol.swift */,
 				E3C0B17829C99FC600996E3C /* SinglyLinkedList.swift */,
 				E3C0B17A29C9F69300996E3C /* DoublyLinkedList.swift */,
+				E362A0F729CAB89000293B0C /* CircularLinkedList.swift */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C0B17929C99FC600996E3C /* SinglyLinkedList.swift in Sources */,
+				E362A0F829CAB89000293B0C /* CircularLinkedList.swift in Sources */,
 				E3C0B17D29C9F84A00996E3C /* LinkedListProtocol.swift in Sources */,
 				E3C0B16F29C99EFB00996E3C /* main.swift in Sources */,
 				E3C0B17729C99F1C00996E3C /* Node.swift in Sources */,
