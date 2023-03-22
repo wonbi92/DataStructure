@@ -9,7 +9,7 @@ import Foundation
 
 final class Node<T: Equatable>: Equatable {
     private let id: UUID = UUID()
-    var prev: Node?
+    weak var prev: Node?
     var data: T
     var next: Node?
     

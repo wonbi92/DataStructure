@@ -10,7 +10,7 @@ import Foundation
 struct DoublyLinkedList<T: Equatable>: LinkedListProtocol {
     private var head: Node<T>?
     private var tail: Node<T>?
-    private var count: UInt = 0
+    private(set) var count: UInt = 0
     
     var isEmpty: Bool {
         head == nil || tail == nil
