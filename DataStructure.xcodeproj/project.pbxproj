@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E31C8A3329DC196E00F9590E /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3229DC196E00F9590E /* HashTable.swift */; };
 		E31C8A3529DC60FB00F9590E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3429DC60FB00F9590E /* Bucket.swift */; };
 		E31C8A3729DC612D00F9590E /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3629DC612D00F9590E /* Element.swift */; };
 		E362A0F829CAB89000293B0C /* CircularLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362A0F729CAB89000293B0C /* CircularLinkedList.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E31C8A3229DC196E00F9590E /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		E31C8A3429DC60FB00F9590E /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
 		E31C8A3629DC612D00F9590E /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		E362A0F729CAB89000293B0C /* CircularLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLinkedList.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		E31C8A3129DC195D00F9590E /* HashTable */ = {
 			isa = PBXGroup;
 			children = (
+				E31C8A3229DC196E00F9590E /* HashTable.swift */,
 				E31C8A3429DC60FB00F9590E /* Bucket.swift */,
 				E31C8A3629DC612D00F9590E /* Element.swift */,
 			);
@@ -160,6 +163,7 @@
 				E3C0B17929C99FC600996E3C /* SinglyLinkedList.swift in Sources */,
 				E362A0F829CAB89000293B0C /* CircularLinkedList.swift in Sources */,
 				E31C8A3729DC612D00F9590E /* Element.swift in Sources */,
+				E31C8A3329DC196E00F9590E /* HashTable.swift in Sources */,
 				E3C0B17D29C9F84A00996E3C /* LinkedListProtocol.swift in Sources */,
 				E3C0B16F29C99EFB00996E3C /* main.swift in Sources */,
 				E31C8A3529DC60FB00F9590E /* Bucket.swift in Sources */,
