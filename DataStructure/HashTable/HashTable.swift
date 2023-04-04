@@ -16,6 +16,12 @@ final class IntKeyHashTable<Value> {
 
     func put(_ key: Int, _ value: Value) {
         let index = hash(key)
+        let newCount = Int.getPrimeNumber(maxCapacity: key)
+        
+        if key >= newCount {
+            let currentCount = table.count
+            table += Array(repeating: Bucket<Int, Value>(), count: newCount - currentCount)
+        }
         
         table[index][key] = value
     }
@@ -33,11 +39,6 @@ final class IntKeyHashTable<Value> {
     }
 }
 
-extension Int {
-    static let primeNumber: Int = 53
-    static let largePrimeNumber: Int = 53
-}
-
 final class StringKeyHashTable<Value> {
     private var table: [Bucket<String, Value>] = Array(repeating: Bucket<String, Value>(), count: .primeNumber)
 
@@ -47,6 +48,12 @@ final class StringKeyHashTable<Value> {
     
     func put(_ key: String, _ value: Value) {
         let index = hash(key)
+        let newCount = Int.getPrimeNumber(maxCapacity: index)
+        
+        if index >= newCount {
+            let currentCount = table.count
+            table += Array(repeating: Bucket<String, Value>(), count: newCount - currentCount)
+        }
         
         table[index][key] = value
     }
