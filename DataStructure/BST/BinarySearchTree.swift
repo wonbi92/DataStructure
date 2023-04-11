@@ -20,13 +20,13 @@ final class BinarySearchTree<T: Comparable> {
         return treeString(root) { ("\($0.data)", $0.left, $0.right) }
     }
     
-    private func search(_ data: T) -> Node<T>? {
+    func search(_ data: T) -> Node<T>? {
         if isEmpty { return nil }
         
         var currentNode = root
         
         while let node = currentNode {
-            if node.data == data { return node }
+            if node.data == data { break }
 
             if data < node.data {
                 currentNode = node.left
@@ -35,7 +35,7 @@ final class BinarySearchTree<T: Comparable> {
             }
         }
         
-        return nil
+        return currentNode
     }
 
     func insert(_ data: T) {
@@ -50,18 +50,24 @@ final class BinarySearchTree<T: Comparable> {
             if node.data == data { return }
             
             if data < node.data {
-                currentNode = node.left
+                guard let nextNode = node.left else {
+                    currentNode?.left = Node(data: data)
+                    currentNode?.left?.parent = currentNode
+                    return
+                }
+                currentNode = nextNode
             } else {
-                currentNode = node.right
+                guard let nextNode = node.right else {
+                    currentNode?.right = Node(data: data)
+                    currentNode?.right?.parent = currentNode
+                    return
+                }
+                currentNode = nextNode
             }
-        }
-        
-        if data < currentNode!.data {
-            currentNode?.left = Node(data: data)
-        } else {
-            currentNode?.right = Node(data: data)
         }
     }
     
-    
+    func remove(_ data: T) {
+        
+    }
 }

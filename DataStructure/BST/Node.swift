@@ -9,12 +9,11 @@ import Foundation
 
 final class Node<T: Comparable> {
     var data: T
+    var parent: Node<T>?
     var left: Node<T>?
     var right: Node<T>?
     
-    init(data: T, left: Node<T>? = nil, right: Node<T>? = nil) {
+    init(data: T) {
         self.data = data
-        self.left = left
-        self.right = right
     }
 }
