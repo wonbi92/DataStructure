@@ -31,16 +31,12 @@ struct Bucket<Key: Hashable, Value> {
     }
     
     private mutating func insert(_ value: Value, forKey key: Key) {
-        var foundMatch: Bool = false
-        
         for i in 0..<elements.count where elements[i].key == key {
             elements[i].value = value
-            foundMatch = true
-            break
+            return
         }
-        if !foundMatch {
-            elements.append(Element(key, value))
-        }
+        
+        elements.append(Element(key, value))
     }
 }
 
