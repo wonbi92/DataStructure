@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class BinarySearchTree1<T: Comparable> {
+final class BinarySearchTree<T: Comparable> {
     private var root: Node<T>?
     
     var isEmpty: Bool {
@@ -69,7 +69,7 @@ final class BinarySearchTree1<T: Comparable> {
     
     func remove(_ data: T) {
         guard let node = search(data) else { return }
-        
+        print("remove \(data)")
         if node.isRoot {
             removeRoot(node: node)
         } else if node.isLeaf {
@@ -152,12 +152,14 @@ final class BinarySearchTree1<T: Comparable> {
         guard let parentNode = node.parent else { return }
         
         if node.hasOnlyLeft {
+            node.left?.parent = node.parent
             if node.data < parentNode.data {
                 parentNode.left = node.left
             } else {
                 parentNode.right = node.left
             }
         } else {
+            node.right?.parent = node.parent
             if node.data < parentNode.data {
                 parentNode.left = node.right
             } else {
