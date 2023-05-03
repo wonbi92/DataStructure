@@ -70,6 +70,7 @@ final class BinarySearchTree<T: Comparable> {
     func remove(_ data: T) {
         guard let node = search(data) else { return }
         print("remove \(data)")
+        
         if node.isRoot {
             removeRoot(node: node)
         } else if node.isLeaf {

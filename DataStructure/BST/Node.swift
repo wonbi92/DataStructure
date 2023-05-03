@@ -9,7 +9,7 @@ import Foundation
 
 final class Node<T: Comparable> {
     var data: T
-    var parent: Node<T>?
+    weak var parent: Node<T>?
     var left: Node<T>?
     var right: Node<T>?
     
