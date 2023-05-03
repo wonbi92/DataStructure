@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E313DAC52A027C2000DEAF64 /* DFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313DAC42A027C2000DEAF64 /* DFS.swift */; };
 		E31C8A3B29E5240500F9590E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3A29E5240500F9590E /* Node.swift */; };
 		E31C8A3D29E5247C00F9590E /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3C29E5247C00F9590E /* BinarySearchTree.swift */; };
 		E31C8A4029E59C4A00F9590E /* TreeDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C8A3F29E59C4A00F9590E /* TreeDiagram.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E313DAC42A027C2000DEAF64 /* DFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFS.swift; sourceTree = "<group>"; };
 		E31C8A3A29E5240500F9590E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		E31C8A3C29E5247C00F9590E /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		E31C8A3F29E59C4A00F9590E /* TreeDiagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDiagram.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C0B16E29C99EFB00996E3C /* main.swift */,
+				E313DAC42A027C2000DEAF64 /* DFS.swift */,
 				E31C8A3E29E59C3100F9590E /* BST */,
 			);
 			path = DataStructure;
@@ -141,6 +144,7 @@
 				E31C8A4029E59C4A00F9590E /* TreeDiagram.swift in Sources */,
 				E31C8A3B29E5240500F9590E /* Node.swift in Sources */,
 				E31C8A3D29E5247C00F9590E /* BinarySearchTree.swift in Sources */,
+				E313DAC52A027C2000DEAF64 /* DFS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
